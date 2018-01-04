@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tHb-Rl-fDV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Wh4-aH-7Pm">
+            <objects>
+                <navigationController id="tHb-Rl-fDV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DIz-ob-SBN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jWu-jB-B2Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lnq-iP-ioG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-969" y="123"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="hw6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lNe-Tx-Ves">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pharmacyTableViewCell" rowHeight="90" id="yHG-kt-Yvh" customClass="PharmacyTableViewCell" customModule="hw6" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yHG-kt-Yvh" id="vDb-MA-1Tn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI7-bO-hpk" userLabel="Pharmacy Region Name">
+                                                    <rect key="frame" x="15" y="34" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pharmacyName" destination="aI7-bO-hpk" id="cBN-hN-oCC"/>
+                                            <segue destination="Fob-xt-eDW" kind="show" id="ICY-8P-0qi"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="R5k-kZ-SBZ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pX1-eO-fYg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lNe-Tx-Ves" secondAttribute="trailing" constant="-16" id="2sA-k8-Lab"/>
+                            <constraint firstItem="lNe-Tx-Ves" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="c4h-WH-xlt"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lNe-Tx-Ves" secondAttribute="bottom" id="s3V-1U-7U1"/>
+                            <constraint firstItem="lNe-Tx-Ves" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="zHd-7c-ju4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="g6w-ea-7aL"/>
+                    <connections>
+                        <outlet property="pharmacyTableView" destination="lNe-Tx-Ves" id="6MW-yF-Urd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="122.78860569715144"/>
+        </scene>
+        <!--Pharmacy Detail View Controller-->
+        <scene sceneID="KXv-na-BMy">
+            <objects>
+                <viewController id="Fob-xt-eDW" userLabel="Pharmacy Detail View Controller" customClass="PharmacyDetailViewController" customModule="hw6" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zRc-vH-p5h"/>
+                        <viewControllerLayoutGuide type="bottom" id="j3D-Il-H4S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mtg-oW-UV1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HR1-O3-7ef" userLabel="Pharmacy Detail Table View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="pharmacyDetailTableViewCell" rowHeight="160" id="e7U-rO-01c" customClass="PharmacyDetailTableViewCell" customModule="hw6" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e7U-rO-01c" id="wKq-r4-JaK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STl-ed-zez" userLabel="Pharmacy Name">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezN-L1-eBi" userLabel="Pharmacy Address">
+                                                    <rect key="frame" x="15" y="102" width="345" height="47"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKD-9z-Sfr" userLabel="Pharmacy Phone Number">
+                                                    <rect key="frame" x="15" y="36" width="345" height="58"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ezN-L1-eBi" firstAttribute="bottom" secondItem="wKq-r4-JaK" secondAttribute="bottomMargin" id="ABI-3z-0DA"/>
+                                                <constraint firstItem="STl-ed-zez" firstAttribute="top" secondItem="wKq-r4-JaK" secondAttribute="topMargin" id="HSK-q9-imq"/>
+                                                <constraint firstItem="ezN-L1-eBi" firstAttribute="trailing" secondItem="uKD-9z-Sfr" secondAttribute="trailing" id="J4h-fd-f1r"/>
+                                                <constraint firstItem="uKD-9z-Sfr" firstAttribute="top" secondItem="STl-ed-zez" secondAttribute="bottom" constant="5" id="KlC-yA-cfK"/>
+                                                <constraint firstItem="ezN-L1-eBi" firstAttribute="trailing" secondItem="STl-ed-zez" secondAttribute="trailing" id="dtn-7s-hej"/>
+                                                <constraint firstItem="ezN-L1-eBi" firstAttribute="top" secondItem="uKD-9z-Sfr" secondAttribute="bottom" constant="5" id="nWI-ka-4p2"/>
+                                                <constraint firstItem="ezN-L1-eBi" firstAttribute="leading" secondItem="uKD-9z-Sfr" secondAttribute="leading" id="o1H-HR-IKS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="uKD-9z-Sfr" firstAttribute="leading" secondItem="e7U-rO-01c" secondAttribute="leading" constant="15" id="Hzu-gY-VoY"/>
+                                            <constraint firstAttribute="trailing" secondItem="uKD-9z-Sfr" secondAttribute="trailing" constant="15" id="L19-9T-Q3e"/>
+                                            <constraint firstItem="STl-ed-zez" firstAttribute="top" secondItem="e7U-rO-01c" secondAttribute="top" constant="11" id="ORM-Pk-0Vv"/>
+                                            <constraint firstItem="STl-ed-zez" firstAttribute="leading" secondItem="e7U-rO-01c" secondAttribute="leading" constant="15" id="YnE-Q4-yDL"/>
+                                            <constraint firstItem="STl-ed-zez" firstAttribute="top" secondItem="e7U-rO-01c" secondAttribute="top" constant="11" id="bpF-dD-Qzj"/>
+                                            <constraint firstAttribute="bottom" secondItem="ezN-L1-eBi" secondAttribute="bottom" constant="11" id="gXx-dJ-azd"/>
+                                            <constraint firstItem="ezN-L1-eBi" firstAttribute="leading" secondItem="e7U-rO-01c" secondAttribute="leading" constant="15" id="gqJ-87-Wfz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="pharmacyAddress" destination="ezN-L1-eBi" id="eFu-xV-I7T"/>
+                                            <outlet property="pharmacyName" destination="STl-ed-zez" id="dJU-ti-r6U"/>
+                                            <outlet property="pharmacyPhoneNumber" destination="uKD-9z-Sfr" id="vbc-wV-I7h"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Fob-xt-eDW" id="sNk-ei-jum"/>
+                                    <outlet property="delegate" destination="Fob-xt-eDW" id="WLw-V1-YFJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="pharmacyDetailTableView" destination="HR1-O3-7ef" id="TGw-lv-IRp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1u8-ed-Ydw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>
